@@ -9,7 +9,7 @@ data = json.load(open('data/data.json'))
 more_data = {
     "dan kalleward": ["My favorite team member."], 
     "ohio state": ["A terrible university according to anyone who has completed research at the University of Michigan."],
-    "michigan bias": ["A tendency to dislike Ohio State University."]
+    "michigan bias": ["A tendency to dislike Ohio State University, but only as a result of entirely reasonable justifications."]
 }
 
 ## If a word has multiple definitions, we need to format it so that there is one 'tidy' response per line.
