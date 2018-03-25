@@ -6,6 +6,7 @@ data = json.load(open('data/data.json'))
 
 ## If a word has multiple definitions, we need to format it so that there is one 'tidy' response per line.
 ## Note that the process is different for interactive versus non-interactive python sessions.
+## This isn't what we typically how we handle results, obviously. However, this an example that's meant for display.
 def format_definition(definition_list):
     out_definition = str(definition_list)
     if bool(getattr(sys, 'ps1', sys.flags.interactive)):
