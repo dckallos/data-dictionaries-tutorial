@@ -2,7 +2,15 @@ import json
 from difflib import get_close_matches
 import sys
 
+## A dictionary created by JSON data. 
 data = json.load(open('data/data.json'))
+
+## A dictionary can also be created via inline python. Here are a few examples. Test your own.
+more_data = {
+    "dan kalleward": ["My favorite team member."], 
+    "ohio state": ["A terrible university according to anyone who has completed research at the University of Michigan."],
+    "michigan bias": ["A tendency to dislike Ohio State University."]
+}
 
 ## If a word has multiple definitions, we need to format it so that there is one 'tidy' response per line.
 ## Note that the process is different for interactive versus non-interactive python sessions.
@@ -29,9 +37,12 @@ def format_response(response):
     else:
         return(False)
 
-def query_definition(data_json, key):
+def query_definition(data_json,  manual_dictionary, key):
     if key in data_json.keys():
         definition = format_definition(data_json[key.lower()])
+        return(definition)
+    elif key in manual_dictionary.keys():
+        definition = format_definition(manual_dictionary[key.lower()])
         return(definition)
     elif len(get_close_matches(key, data_json.keys())) > 0:
         if bool(getattr(sys, 'ps1', sys.flags.interactive)):
@@ -45,4 +56,5 @@ def query_definition(data_json, key):
         return('No definition is available for the word.')
 
 ## Print the outputs of the functions from any arbitrary word. Voila.
-print(query_definition(data, 'rain'))
+print(query_definition(data, more_data, 'michigan bias'))
+#print(more_data['michigan bias'])
