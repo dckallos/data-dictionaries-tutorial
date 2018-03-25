@@ -57,4 +57,3 @@ def query_definition(data_json,  manual_dictionary, key):
 
 ## Print the outputs of the functions from any arbitrary word. Voila.
 print(query_definition(data, more_data, 'michigan bias'))
-#print(more_data['michigan bias'])
