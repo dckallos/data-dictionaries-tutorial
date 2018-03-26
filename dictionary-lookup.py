@@ -7,9 +7,9 @@ data = json.load(open('data/data.json'))
 
 ## A dictionary can also be created via inline python. Here are a few examples. Test your own.
 more_data = {
-    "dan kalleward": ["My favorite team member."], 
+    "dan kalleward": ["My favorite colleague."], 
     "ohio state": ["A terrible university according to anyone who has completed research at the University of Michigan."],
-    "michigan bias": ["A tendency to dislike Ohio State University, but only as a result of entirely reasonable justifications."]
+    "michigan bias": ["A tendency to dislike Ohio State University, but only because it is a terrible place."]
 }
 
 ## If a word has multiple definitions, we need to format it so that there is one 'tidy' response per line.
